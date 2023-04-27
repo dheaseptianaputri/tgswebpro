@@ -1,20 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Input Matakuliah</title>
-</head>
-
-<body>
+<section>
     <center>
-        <form action="<?= base_url('matakuliah/cetak'); ?>" method="post">
+        <form action="<?= base_url('web/data'); ?>" method="post" onsubmit="return validateForm()">
             <table>
                 <tr>
                     <th colspan="3">
-                        Form Input Data Mata Kuliah
+                        <div class="judul">Form Input Data Mata Kuliah</div>
                     </th>
                 </tr>
                 <tr>
@@ -26,7 +16,8 @@
                     <th>Kode MTK</th>
                     <th>:</th>
                     <td>
-                        <input type="text" name="nama" id="nama">
+                        <input type="text" name="kode" id="kode">
+                        <?php echo form_error('kode', '<span class="error">', '</span>'); ?>
                     </td>
                 </tr>
                 <tr>
@@ -34,6 +25,7 @@
                     <th>:</th>
                     <td>
                         <input type="text" name="nama" id="nama">
+                        <?php echo form_error('nama', '<span class="error">', '</span>'); ?>
                     </td>
                 </tr>
                 <tr>
@@ -46,6 +38,7 @@
                             <option value="3">3</option>
                             <option value="4">4</option>
                         </select>
+                        <?php echo form_error('sks', '<span class="error">', '</span>'); ?>
                     </td>
                 </tr>
                 <tr>
@@ -56,6 +49,4 @@
             </table>
         </form>
     </center>
-</body>
-
-</html>
+</section>
